@@ -1,6 +1,6 @@
 // Javascript (node.js) https://adventofcode.com/2020/day/8
 
-const inputFile = fs.readFileSync('/users/didymusne/downloads/day8puzzle.txt', { encoding: 'utf8', flag: 'r', });
+const inputFile = fs.readFileSync('day8puzzle.txt', { encoding: 'utf8', flag: 'r', });
 let data = inputFile.split("\n");
 
 // puzzle 1
