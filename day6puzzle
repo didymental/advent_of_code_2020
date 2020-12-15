@@ -1,9 +1,10 @@
 // Javascript (node.js) https://adventofcode.com/2020/day/6
 const inputFile = fs.readFileSync('/users/didymusne/downloads/day6puzzle.txt', { encoding: 'utf8', flag: 'r', });
 
+// puzzle 1
 function generate_table(str) {
     let temp = str.split("\n\n");
-    temp = temp.map(x => x.split(",").join(''));
+    temp = temp.map(x => x.split("\n").join(''));
     return temp;
 }
 
@@ -30,12 +31,10 @@ function sum_of_counts(str) {
     return counter;
 }
 
-> sum_of_counts(given);
-6612
-
-function answers(str) {
-    let temp = str.split(";");
-    temp = temp.map(x => x.split(","));
+// puzzle 2
+function answer(str) {
+    let temp = str.split("\n\n");
+    temp = temp.map(x => x.split("\n"));
     temp = temp.map(x => x.filter(y => y !== ''));
     return temp;
 }
@@ -72,5 +71,5 @@ function sum(arr) {
     return counter;
 }
 
-> sum(answers(given).map(x => number_of_same_answers(x)));
-3268
+console.log(sum_of_counts(inputFile));
+console.log(sum(answer(inputFile).map(x => number_of_same_answers(x))));
