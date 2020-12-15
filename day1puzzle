@@ -37,3 +37,6 @@ function triple_bubble(arr) {
     }
     return result[0] * result[1] * result[2];
 }
+
+console.log(bubble_arr_2020(puzzle));
+console.log(triple_bubble(puzzle));
