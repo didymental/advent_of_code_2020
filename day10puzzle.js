@@ -71,27 +71,4 @@ function main(input) {
     return join_adaptors(0, input, 0, 1);
 }
 
-// puzzle 2
-let u = [0].concat(mergesort(data));
-
-let cache = [];
-
-const dp = n => {
-    if (n == u.length - 1) {
-        return 1; 
-    } else if (n in cache) {
-        return cache[n];
-    } else {
-        let ans = 0;
-        for (let i = n + 1; i < u.length; i = i + 1) {
-            if (u[i] - u[n] <= 3) {
-                ans += dp(i);
-            }
-        }
-        cache[n] = ans;
-        return ans;
-    }
-}
-
 console.log(main(data));
-console.log(dp(0));
